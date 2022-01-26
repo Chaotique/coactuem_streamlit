@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 # load sociodem basic data
 @st.cache(suppress_st_warning=True) 
 def load_answers_basic_sociodem():
-    df_sociodem_basic = pd.read_pickle("answers_basic_sociodem.pkl")
+    df_sociodem_basic = pd.read_csv("answers_basic_sociodem.csv", usecols = ["genere", "edat", "pp", "p_cuid", "p_prof_si"])
     return df_sociodem_basic
 df_sociodem_basic = load_answers_basic_sociodem()
 
