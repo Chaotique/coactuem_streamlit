@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 #st.set_page_config(layout="wide")
 
 reload_data = st.button('Reload Data')
-st.write('Click the above button to fetch the data from last night.')
+st.write('Click the above button to fetch the latest data (up to one hour old).')
 # load sociodem basic data
 @st.cache(suppress_st_warning=True) 
 def load_answers_basic_sociodem(reload_data=True):
@@ -14,8 +14,6 @@ def load_answers_basic_sociodem(reload_data=True):
         df_sociodem_basic = pd.read_csv("answers_basic_sociodem.csv", usecols = ["genere", "edat", "pp", "p_cuid", "p_prof_si"])
     return df_sociodem_basic
 df_sociodem_basic = load_answers_basic_sociodem()
-
-st.write("This is the beginning of a beautiful page.")
 
 st.write(str(len(df_sociodem_basic))+" participants already answered the sociodemografic survey (not counting the 7 OS accounts).")
 
