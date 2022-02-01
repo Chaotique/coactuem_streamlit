@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd 
 import seaborn as sns
 from matplotlib import pyplot as plt
-from streamlit_ace import  st_ace
 
 #st.set_page_config(layout="wide")
 
@@ -32,14 +31,3 @@ for category in df_sociodem_basic:
 st.dataframe(df_sociodem_basic.head())
 
 
-
-st.markdown("## Input")
-code = st_ace(language = 'python',
-theme='xcode')
-
-st.markdown("## Output")
-#st.markdown("``` python\n"+code+"```")
-st_ace(value = code,
-    language = 'python',
-    theme = 'pastel_on_dark',
-    readonly  = True)
