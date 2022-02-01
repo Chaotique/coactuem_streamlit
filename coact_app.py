@@ -16,6 +16,15 @@ def load_answers_basic_sociodem(reload_data=True):
 df_sociodem_basic = load_answers_basic_sociodem()
 
 st.write(str(len(df_sociodem_basic))+" participants already answered the sociodemografic survey (not counting the 7 OS accounts).")
+# load sociodem basic data
+
+@st.cache(suppress_st_warning=True) 
+def load_area_code_sociodem(reload_data=True):
+    if reload_data:
+        df_sociodem_area = pd.read_csv("area_code_sociodem.csv", usecols = ["area_codi"])
+    return df_sociodem_area
+df_sociodem_area = load_area_code_sociodem()
+
 
 for category in df_sociodem_basic:
     df = df_sociodem_basic
@@ -29,5 +38,5 @@ for category in df_sociodem_basic:
     st.pyplot(fig)
 
 st.dataframe(df_sociodem_basic.head())
-
+print(df_sociodem_area.value_counts())
 
