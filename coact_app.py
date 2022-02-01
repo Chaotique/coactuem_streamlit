@@ -38,5 +38,5 @@ for category in df_sociodem_basic:
     st.pyplot(fig)
 
 st.dataframe(df_sociodem_basic.head())
-print(df_sociodem_area.value_counts())
+st.write(df_sociodem_area.value_counts())
 
