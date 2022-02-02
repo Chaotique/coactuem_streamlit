@@ -5,6 +5,7 @@ from matplotlib import pyplot as plt
 
 #st.set_page_config(layout="wide")
 
+reload_data = True
 reload_data = st.button('Reload Data')
 st.write('Click the above button to update the displayed data (up to one hour old).')
 # load sociodem basic data
