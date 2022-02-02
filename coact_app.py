@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 #st.set_page_config(layout="wide")
 
 reload_data = st.button('Reload Data')
-st.write('Click the above button to fetch the latest data (up to one hour old).')
+st.write('Click the above button to update the displayed data (up to one hour old).')
 # load sociodem basic data
 @st.cache(suppress_st_warning=True) 
 def load_answers_basic_sociodem(reload_data=True):
