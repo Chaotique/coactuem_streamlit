@@ -9,7 +9,7 @@ reload_data = True
 #reload_data = st.button('Reload Data')
 #st.write('Click the above button to update the displayed data (up to one hour old).')
 # load sociodem basic data
-@st.cache(suppress_st_warning=True) 
+#@st.cache(suppress_st_warning=True) 
 def load_answers_basic_sociodem(reload_data):
     if reload_data:
         df_sociodem_basic = pd.read_csv("answers_basic_sociodem.csv", usecols = ["genere", "edat", "pp", "p_cuid", "p_prof_si"])
@@ -19,7 +19,7 @@ df_sociodem_basic = load_answers_basic_sociodem(reload_data)
 st.write(str(len(df_sociodem_basic))+" participants already answered the sociodemografic survey (not counting the 7 OS accounts).")
 # load sociodem basic data
 
-@st.cache(suppress_st_warning=True) 
+#@st.cache(suppress_st_warning=True) 
 def load_area_code_sociodem(reload_data):
     if reload_data:
         df_sociodem_area = pd.read_csv("area_code_sociodem.csv", usecols = ["area_codi"])
